@@ -1,0 +1,23 @@
+{
+    "name": "allies/extended-magento-bundle",
+    "type": "symfony-bundle",
+    "description": "Allies Extended Magento Bundle",
+    "keywords":["CRM"],
+    "license":"MIT",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.3.*",
+        "friendsofsymfony/rest-bundle": "1.5.0-RC2",
+        "nelmio/api-doc-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "target-dir": "src/Allies/Bundle/ExtendedMagentoBundle",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+allies:
+    extendedmagento:
+        
+orocrm:
+    magento:
+        order:
+            state.label:                                State
+            coupon_rule_name.label:                     Coupon Rule Name
+            shipping_description.label:                 Shipping Description
+            discount_description.label:                 Discount Description
+            hidden_tax_amount.label:                    Hidden Tax Amount
+            shipping_tax_amount.label:                  Shipping Tax Amount
+            shipping_hidden_tax_amount.label:           Shipping Hidden Tax Amount
+            shipping_incl_tax.label:                    Shipping Inc. Tax
+            surcharge_amount.label:                     Surcharge Amount
+            subtotal_incl_tax.label:                    Subtotal Inc. Tax
+            rewards_discount_amount.label:              Rewards Discount Amount
+            rewards_discount_tax_amount.label:          Rewards Discount Tax Amount
+            mailchimp_campaign_id.label:                MailChimp Campaign ID
+            osc_customercomment.label:                  OSC Customer Comment
+            osc_customerfeedback.label:                 OSC Customer Feedback Source
+            
+            

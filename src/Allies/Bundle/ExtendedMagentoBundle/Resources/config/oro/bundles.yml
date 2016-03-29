@@ -1,0 +1,2 @@
+bundles:
+    - { name: Allies\Bundle\ExtendedMagentoBundle\AlliesExtendedMagentoBundle, priority: 200 }
