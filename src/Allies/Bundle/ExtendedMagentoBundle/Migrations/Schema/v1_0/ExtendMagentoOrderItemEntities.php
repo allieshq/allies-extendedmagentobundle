@@ -21,7 +21,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         
         $table->addColumn('giftMessage', 'text', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -30,7 +30,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         ]);
         $table->addColumn('priceInclTax', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -39,7 +39,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         ]);
         $table->addColumn('baseCost', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -48,7 +48,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         ]);
         $table->addColumn('hiddenTaxAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -57,7 +57,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         ]);
         $table->addColumn('rowTotalInclTax', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -66,7 +66,7 @@ class ExtendMagentoOrderItemEntities implements Migration
         ]);
         $table->addColumn('surchargeAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
