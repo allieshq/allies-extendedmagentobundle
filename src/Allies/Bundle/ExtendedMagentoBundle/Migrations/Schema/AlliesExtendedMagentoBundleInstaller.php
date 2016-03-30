@@ -22,6 +22,7 @@ use Oro\Bundle\EntityExtendBundle\EntityConfig\ExtendScope;
 
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_0;
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderItemEntities as ExtendMagentoOrderItemEntities_v1_0;
+use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\AddIndexes as AddIndexes_v1_0_1;
 
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
@@ -80,8 +81,9 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function getMigrationVersion()
     {
-        return "v1_0";
+        return "v1_0_1";
     }
+    
     /**
      * {@inheritdoc}
      */
@@ -89,5 +91,6 @@ class AlliesExtendedMagentoBundleInstaller implements
     {
         ExtendMagentoOrderEntities_v1_0::addOrderEntityExtendFields($schema);
         ExtendMagentoOrderItemEntities_v1_0::addOrderItemEntityExtendFields($schema);
+        AddIndexes_v1_0_1::addMagentoOrderIndexes($schema);
     }
 }
