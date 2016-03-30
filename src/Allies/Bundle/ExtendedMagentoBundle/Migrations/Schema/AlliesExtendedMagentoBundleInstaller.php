@@ -22,7 +22,7 @@ use Oro\Bundle\EntityExtendBundle\EntityConfig\ExtendScope;
 
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_0;
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderItemEntities as ExtendMagentoOrderItemEntities_v1_0;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\AddIndexes as AddIndexes_v1_0_1;
+use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0_1\AddIndexes as AddIndexes_v1_0_1;
 
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
