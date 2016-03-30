@@ -28,7 +28,7 @@ class ExtendMagentoOrderEntities implements Migration
         $table->addColumn('state', 'string', [
             'length' => 32,
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -38,7 +38,7 @@ class ExtendMagentoOrderEntities implements Migration
         $table->addColumn('couponRuleName', 'string', [
             'length' => 255,
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -48,7 +48,7 @@ class ExtendMagentoOrderEntities implements Migration
         $table->addColumn('shippingDescription', 'string', [
             'length' => 255,
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -58,7 +58,7 @@ class ExtendMagentoOrderEntities implements Migration
         $table->addColumn('discountDescription', 'string', [
             'length' => 255,
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -68,7 +68,7 @@ class ExtendMagentoOrderEntities implements Migration
         
         $table->addColumn('hiddenTaxAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -77,7 +77,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('shippingTaxAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -86,7 +86,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('shippingHiddenTaxAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -95,7 +95,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('shippingInclTax', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -104,7 +104,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('surchargeAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -113,7 +113,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('subtotalInclTax', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -122,7 +122,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('rewardsDiscountAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -131,7 +131,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('rewardsDiscountTaxAmount', 'money', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -142,7 +142,7 @@ class ExtendMagentoOrderEntities implements Migration
         $table->addColumn('mailchimpCampaignId', 'string', [
             'length' => 10,
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -151,7 +151,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('oscCustomercomment', 'text', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
@@ -160,7 +160,7 @@ class ExtendMagentoOrderEntities implements Migration
         ]);
         $table->addColumn('oscCustomerfeedback', 'text', [
             'oro_options' => [
-                'extend' => ['owner' => ExtendScope::OWNER_SYSTEM, 'is_extend' => true],
+                'extend' => ['owner' => ExtendScope::OWNER_CUSTOM, 'is_extend' => true],
                 'datagrid' => ['is_visible' => false, 'show_filter' => false],
                 'merge' => ['display' => true],
                 'dataaudit' => ['auditable' => true],
