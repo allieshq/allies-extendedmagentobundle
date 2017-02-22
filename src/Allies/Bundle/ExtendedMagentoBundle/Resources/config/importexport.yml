@@ -4,11 +4,11 @@ parameters:
 services:
     allies_extendedmagento.importexport.data_converter.order_item:
         class: %allies_extendedmagento.importexport.data_converter.order_item.class%
-        parent: orocrm_magento.importexport.data_converter.order_item
+        parent: oro_magento.importexport.data_converter.order_item
         
-    orocrm_magento.importexport.data_converter.order:
-        class: %orocrm_magento.importexport.data_converter.order.class%
+    oro_magento.importexport.data_converter.order:
+        class: %oro_magento.importexport.data_converter.order.class%
         calls:
-            - [addNodeDataConverter, ['shipping_address', @orocrm_magento.importexport.data_converter.order_address]]
-            - [addNodeDataConverter, ['billing_address', @orocrm_magento.importexport.data_converter.order_address]]
+            - [addNodeDataConverter, ['shipping_address', @oro_magento.importexport.data_converter.order_address]]
+            - [addNodeDataConverter, ['billing_address', @oro_magento.importexport.data_converter.order_address]]
             - [addNodeDataConverter, ['items', @allies_extendedmagento.importexport.data_converter.order_item, true]]
