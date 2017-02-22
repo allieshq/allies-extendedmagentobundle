@@ -13,9 +13,6 @@ use Oro\Bundle\AttachmentBundle\Migration\Extension\AttachmentExtensionAwareInte
 use Oro\Bundle\MigrationBundle\Migration\Installation;
 use Oro\Bundle\MigrationBundle\Migration\QueryBag;
 
-use Oro\Bundle\NoteBundle\Migration\Extension\NoteExtension;
-use Oro\Bundle\NoteBundle\Migration\Extension\NoteExtensionAwareInterface;
-
 use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtension;
 use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtensionAwareInterface;
 use Oro\Bundle\EntityExtendBundle\EntityConfig\ExtendScope;
@@ -27,16 +24,12 @@ use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0_1\AddIndexes as A
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
         AttachmentExtensionAwareInterface ,
-        NoteExtensionAwareInterface ,
         ActivityExtensionAwareInterface ,
         ExtendExtensionAwareInterface
     {
     
     /** @var AttachmentExtension */
     protected $attachmentExtension;
-    
-    /** @var NoteExtension */
-    protected $noteExtension;
     
     /** @var ActivityExtension */
     protected $activityExtension;
@@ -50,14 +43,6 @@ class AlliesExtendedMagentoBundleInstaller implements
     public function setAttachmentExtension(AttachmentExtension $attachmentExtension)
     {
         $this->attachmentExtension = $attachmentExtension;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setNoteExtension(NoteExtension $noteExtension)
-    {
-        $this->noteExtension = $noteExtension;
     }
     
     /**
