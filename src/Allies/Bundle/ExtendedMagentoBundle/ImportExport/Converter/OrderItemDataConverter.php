@@ -2,7 +2,7 @@
 
 namespace Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter;
 
-use OroCRM\Bundle\MagentoBundle\ImportExport\Converter\OrderItemDataConverter as BaseOrderItemDataConverter;
+use Oro\Bundle\MagentoBundle\ImportExport\Converter\OrderItemDataConverter as BaseOrderItemDataConverter;
 
 class OrderItemDataConverter extends BaseOrderItemDataConverter
 {
