@@ -22,6 +22,7 @@ use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrde
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0_1\AddIndexes as AddIndexes_v1_0_1;
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1\ExtendMagentoCartEntities as ExtendMagentoCartEntities_v1_1;
 use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1\ExtendMagentoCartItemEntities as ExtendMagentoCartItemEntities_v1_1;
+use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1_1\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_1_1;
 
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
@@ -68,7 +69,7 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function getMigrationVersion()
     {
-        return "v1_1";
+        return "v1_1_1";
     }
     
     /**
@@ -81,5 +82,6 @@ class AlliesExtendedMagentoBundleInstaller implements
         AddIndexes_v1_0_1::addMagentoOrderIndexes($schema);
         ExtendMagentoCartEntities_v1_1::addCartEntityExtendFields($schema);
         ExtendMagentoCartItemEntities_v1_1::addCartItemEntityExtendFields($schema);
+        ExtendMagentoOrderEntities_v1_1_1::addOrderEntityExtendFields($schema);
     }
 }
