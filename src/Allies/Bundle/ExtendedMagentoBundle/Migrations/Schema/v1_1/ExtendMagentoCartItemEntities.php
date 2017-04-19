@@ -1,6 +1,6 @@
 <?php
 
-namespace Allies\Bundle\ExtendedMagentoBundle\Migration\Schema\v1_1;
+namespace Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1;
 
 use Doctrine\DBAL\Schema\Schema;
 
