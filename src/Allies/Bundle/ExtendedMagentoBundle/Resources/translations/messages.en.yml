@@ -37,5 +37,10 @@ oro:
             mailchimp_campaign_id.label:                MailChimp Campaign ID
             osc_customercomment.label:                  OSC Customer Comment
             osc_customerfeedback.label:                 OSC Customer Feedback Source
-            
-            
+        orderitem:
+            base_cost.label:                            Base Cost
+            gift_message.label:                         Gift Message
+            hidden_tax_amount.label:                    Hidden Tax Amount
+            price_incl_tax.label:                       Price Incl Tax
+            row_total_incl_tax.label:                   Row Total Incl Tax
+            surcharge_amount.label:                     Surcharge Amount
