@@ -22,4 +22,21 @@ class OrderItemDataConverter extends BaseOrderItemDataConverter
                 ]
             );
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function convertToImportFormat(array $importedRecord, $skipNullValues = true)
+    {
+        $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
+        
+        // Float or null
+        foreach (['priceInclTax','baseCost','rowTotalInclTax','hiddenTaxAmount','surchargeAmount'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
+            }
+        }
+        
+        return $return;
+    }
 }

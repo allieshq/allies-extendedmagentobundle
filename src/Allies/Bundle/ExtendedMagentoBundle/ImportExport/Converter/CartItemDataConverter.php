@@ -35,4 +35,27 @@ class CartItemDataConverter extends BaseCartItemDataConverter
 
         return $return;
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function convertToImportFormat(array $importedRecord, $skipNullValues = true)
+    {
+        $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
+        
+        // Bool
+        foreach (['isQtyDecimal','noDiscount'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = (int)(bool)$return[$k];
+            }
+        }
+        // Float or null
+        foreach (['rowTotalWithDiscount','originalCustomPrice','rowTotalInclTax','hiddenTaxAmount','surchargeAmount','rowTotBeforeRedemptions','rowTotBeforeRedemptionsIncTax','rowTotAfterRedemptions','rowTotAfterRedemptionsIncTax'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
+            }
+        }
+        
+        return $return;
+    }
 }

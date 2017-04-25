@@ -2,9 +2,9 @@
 
 namespace Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter;
 
-use Oro\Bundle\MagentoBundle\ImportExport\Converter\CartDataConverter as BaseCartDataConverter;
+use Oro\Bundle\MagentoBundle\ImportExport\Converter\OrderDataConverter as BaseOrderDataConverter;
 
-class CartDataConverter extends BaseCartDataConverter
+class OrderDataConverter extends BaseOrderDataConverter
 {
     /**
      * {@inheritdoc}
@@ -14,43 +14,39 @@ class CartDataConverter extends BaseCartDataConverter
         $return = array_merge(
             parent::getHeaderConversionRules(),
             [
-                'is_active' => 'isActive',
-                'is_virtual' => 'isVirtual',
-                'is_multi_shipping' => 'isMultiShipping',
-                'is_persistent' => 'isPersistent',
-                
-                'checkout_method' => 'checkoutMethod',
-                
-                'customer_prefix' => 'customerPrefix',
-                'customer_middlename' => 'customerMiddlename',
-                'customer_suffix' => 'customerSuffix',
-                'customer_dob' => 'customerDob',
-                'customer_note' => 'customerNote',
-                'customer_taxvat' => 'customerTaxvat',
-                'customer_gender' => 'customerGender',
-                
-                'remote_ip' => 'remoteIp',
-                'applied_rule_ids' => 'appliedRuleIds',
-                'reserved_order_id' => 'reservedOrderId',
-                'coupon_code' => 'couponCode',
-                
-                'subtotal_with_discount' => 'subtotalWithDiscount',
-                
-                'onestepcheckout_customercomment' => 'oscCustomercomment',
-                'onestepcheckoutCustomercomment' => 'oscCustomercomment',
-                'onestepcheckout_customerfeedback' => 'oscCustomerfeedback',
-                'onestepcheckoutCustomerfeedback' => 'oscCustomerfeedback',
-                
-                'rewards_points_spending' => 'rewardsPointsSpending',
+                'coupon_rule_name' => 'couponRuleName',
+                'shipping_description' => 'shippingDescription',
+                'discount_description' => 'discountDescription',
+                'hidden_tax_amount' => 'hiddenTaxAmount',
+                'shipping_tax_amount' => 'shippingTaxAmount',
+                'shipping_hidden_tax_amount' => 'shippingHiddenTaxAmount',
+                'shipping_incl_tax' => 'shippingInclTax',
+                'surcharge_amount' => 'surchargeAmount',
+                'subtotal_incl_tax' => 'subtotalInclTax',
                 'rewards_discount_amount' => 'rewardsDiscountAmount',
-                'rewards_discount_tax_amount' => 'rewardsDiscountTaxAmount',
-                'rewards_valid_redemptions' => 'rewardsValidRedemptions',
-                
-                'store_credit_amount_used' => 'storeCreditAmountUsed',
-                'use_store_credit' => 'useStoreCredit',
+                'mailchimp_campaign_id' => 'mailchimpCampaignId',
+                'osc_customercomment' => 'oscCustomercomment',
+                'osc_customerfeedback' => 'oscCustomerfeedback',
             ]
         );
 
+        return $return;
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function convertToImportFormat(array $importedRecord, $skipNullValues = true)
+    {
+        $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
+        
+        // Float or null
+        foreach (['hiddenTaxAmount','shippingTaxAmount','shippingHiddenTaxAmount','shippingInclTax','surchargeAmount','subtotalInclTax','rewardsDiscountAmount'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
+            }
+        }
+        
         return $return;
     }
 }
