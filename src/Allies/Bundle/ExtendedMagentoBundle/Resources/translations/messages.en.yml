@@ -22,6 +22,7 @@ oro:
             customer_prefix.label:                      Customer Name Prefix
             customer_suffix.label:                      Customer Name Suffix
             customer_taxvat.label:                      Customer Tax / VAT Code
+            customer_gender.label:                      Customer Gender
         orderitem:
             base_cost.label:                            Base Cost
             gift_message.label:                         Gift Message
@@ -39,9 +40,11 @@ oro:
             customer_prefix.label:                      Customer Name Prefix
             customer_suffix.label:                      Customer Name Suffix
             customer_taxvat.label:                      Customer Tax / VAT Code
+            customer_dob.label:                         Customer Date of Birth
             is_active.label:                            Is Active
             is_persistent.label:                        Is Persistent
             is_virtual.label:                           Is Virtual
+            is_multi_shipping.label:                    Is Multi Shipping
             remote_ip.label:                            Remote IP
             reserved_order_id.label:                    Reserved Order Id
             rewards_discount_amount.label:              Rewards Discount Amount
@@ -51,6 +54,8 @@ oro:
             store_credit_amount_used.label:             Store Credit Amount Used
             subtotal_with_discount.label:               Subtotal With Discount
             use_store_credit.label:                     Use Store Credit
+            osc_customercomment.label:                  OSC Customer Comment
+            osc_customerfeedback.label:                 OSC Customer Feedback Source
         cartitem:
             additional_data.label:                      Additional Data
             applied_rule_ids.label:                     Applied Rule Ids
