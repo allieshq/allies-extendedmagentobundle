@@ -1,4 +1,5 @@
 parameters:
+    allies_extendedmagento.importexport.data_converter.order.class:         Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter\OrderDataConverter
     allies_extendedmagento.importexport.data_converter.order_item.class:    Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter\OrderItemDataConverter
     allies_extendedmagento.importexport.data_converter.cart.class:          Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter\CartDataConverter
     allies_extendedmagento.importexport.data_converter.cart_item.class:     Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter\CartItemDataConverter
@@ -9,7 +10,7 @@ services:
         parent: oro_magento.importexport.data_converter.order_item
         
     oro_magento.importexport.data_converter.order:
-        class: %oro_magento.importexport.data_converter.order.class%
+        class: %allies_extendedmagento.importexport.data_converter.order.class%
         calls:
             - [addNodeDataConverter, ['shipping_address', @oro_magento.importexport.data_converter.order_address]]
             - [addNodeDataConverter, ['billing_address', @oro_magento.importexport.data_converter.order_address]]

@@ -53,4 +53,27 @@ class CartDataConverter extends BaseCartDataConverter
 
         return $return;
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function convertToImportFormat(array $importedRecord, $skipNullValues = true)
+    {
+        $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
+        
+        // Bool
+        foreach (['isActive','isVirtual','isMultiShipping','isPersistent','useStoreCredit'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = (int)(bool)$return[$k];
+            }
+        }
+        // Float or null
+        foreach (['surchargeAmount', 'subtotalWithDiscount','rewardsPointsSpending','rewardsDiscountAmount','rewardsDiscountTaxAmount','storeCreditAmountUsed'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
+            }
+        }
+        
+        return $return;
+    }
 }
