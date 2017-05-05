@@ -27,6 +27,7 @@ class OrderDataConverter extends BaseOrderDataConverter
                 'mailchimp_campaign_id' => 'mailchimpCampaignId',
                 'osc_customercomment' => 'oscCustomercomment',
                 'osc_customerfeedback' => 'oscCustomerfeedback',
+                'rewards_discount_tax_amount' => 'rewardsDiscountTaxAmount',
             ]
         );
 
@@ -41,7 +42,7 @@ class OrderDataConverter extends BaseOrderDataConverter
         $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
         
         // Float or null
-        foreach (['hiddenTaxAmount','shippingTaxAmount','shippingHiddenTaxAmount','shippingInclTax','surchargeAmount','subtotalInclTax','rewardsDiscountAmount'] as $k) {
+        foreach (['hiddenTaxAmount','shippingTaxAmount','shippingHiddenTaxAmount','shippingInclTax','surchargeAmount','subtotalInclTax','rewardsDiscountAmount','rewardsDiscountTaxAmount'] as $k) {
             if (array_key_exists($k, $return)) {
                 $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
             }
