@@ -74,6 +74,36 @@ class CartDataConverter extends BaseCartDataConverter
             }
         }
         
+        if (!empty($importedRecord['customerGender'])) {
+            $importedRecord['customerGender'] = $this->getOroGender($importedRecord['gender']);
+        }
+        
         return $return;
+    }
+
+    /**
+     * Lifted from OroMagentoBundle:CustomerDataConverter
+     * This is such a hack, Oro
+     * 
+     * @param string|int $gender
+     * @return null|string
+     */
+    protected function getOroGender($gender)
+    {
+        if (is_numeric($gender)) {
+            if ($gender == 1) {
+                $gender = Gender::MALE;
+            }
+            if ($gender == 2) {
+                $gender = Gender::FEMALE;
+            }
+        } else {
+            $gender = strtolower($gender);
+            if (!in_array($gender, [Gender::FEMALE, Gender::MALE], true)) {
+                $gender = null;
+            }
+        }
+
+        return $gender;
     }
 }
