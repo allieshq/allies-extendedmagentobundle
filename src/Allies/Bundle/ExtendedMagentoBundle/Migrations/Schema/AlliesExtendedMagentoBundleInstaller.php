@@ -17,13 +17,6 @@ use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtension;
 use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtensionAwareInterface;
 use Oro\Bundle\EntityExtendBundle\EntityConfig\ExtendScope;
 
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_0;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderItemEntities as ExtendMagentoOrderItemEntities_v1_0;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0_1\AddIndexes as AddIndexes_v1_0_1;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1\ExtendMagentoCartEntities as ExtendMagentoCartEntities_v1_1;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1\ExtendMagentoCartItemEntities as ExtendMagentoCartItemEntities_v1_1;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_1_1\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_1_1;
-
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
         AttachmentExtensionAwareInterface ,
@@ -69,7 +62,7 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function getMigrationVersion()
     {
-        return "v1_1_1";
+        return "v1_2";
     }
     
     /**
@@ -77,11 +70,14 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function up(Schema $schema, QueryBag $queries)
     {
-        ExtendMagentoOrderEntities_v1_0::addOrderEntityExtendFields($schema);
-        ExtendMagentoOrderItemEntities_v1_0::addOrderItemEntityExtendFields($schema);
-        AddIndexes_v1_0_1::addMagentoOrderIndexes($schema);
-        ExtendMagentoCartEntities_v1_1::addCartEntityExtendFields($schema);
-        ExtendMagentoCartItemEntities_v1_1::addCartItemEntityExtendFields($schema);
-        ExtendMagentoOrderEntities_v1_1_1::addOrderEntityExtendFields($schema);
+        v1_0\ExtendMagentoOrderEntities::addOrderEntityExtendFields($schema);
+        v1_1_1\ExtendMagentoOrderEntities::addOrderEntityExtendFields($schema);
+        v1_0\ExtendMagentoOrderItemEntities::addOrderItemEntityExtendFields($schema);
+        v1_0_1\AddIndexes::addMagentoOrderIndexes($schema);
+        v1_1\ExtendMagentoCartEntities::addCartEntityExtendFields($schema);
+        v1_1\ExtendMagentoCartItemEntities::addCartItemEntityExtendFields($schema);
+        v1_2\ExtendMagentoCustomerAddressEntities::addCustomerAddressStreetFields($schema);
+        v1_2\ExtendMagentoCartAddressEntities::addCartAddressStreetFields($schema);
+        v1_2\ExtendMagentoOrderAddressEntities::addOrderAddressStreetFields($schema);
     }
 }
