@@ -72,4 +72,10 @@ oro:
             row_tot_before_redemptions_inc_tax.label:   Row Total Before Redemptions (inc Tax)
             surcharge_amount.label:                     Surcharge Amount
             tax_before_discount.label:                  Tax Before Discount
-            
+        cartaddress:
+            street3.label:                              Street 3
+        address:
+            street3.label:                              Street 3
+        orderaddress:
+            street2.label:                              Street 2
+            street3.label:                              Street 3 
