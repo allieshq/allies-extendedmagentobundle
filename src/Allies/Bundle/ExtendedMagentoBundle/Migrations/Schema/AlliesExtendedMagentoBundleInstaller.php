@@ -13,30 +13,19 @@ use Oro\Bundle\AttachmentBundle\Migration\Extension\AttachmentExtensionAwareInte
 use Oro\Bundle\MigrationBundle\Migration\Installation;
 use Oro\Bundle\MigrationBundle\Migration\QueryBag;
 
-use Oro\Bundle\NoteBundle\Migration\Extension\NoteExtension;
-use Oro\Bundle\NoteBundle\Migration\Extension\NoteExtensionAwareInterface;
-
 use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtension;
 use Oro\Bundle\EntityExtendBundle\Migration\Extension\ExtendExtensionAwareInterface;
 use Oro\Bundle\EntityExtendBundle\EntityConfig\ExtendScope;
 
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderEntities as ExtendMagentoOrderEntities_v1_0;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0\ExtendMagentoOrderItemEntities as ExtendMagentoOrderItemEntities_v1_0;
-use Allies\Bundle\ExtendedMagentoBundle\Migrations\Schema\v1_0_1\AddIndexes as AddIndexes_v1_0_1;
-
 class AlliesExtendedMagentoBundleInstaller implements
         Installation ,
         AttachmentExtensionAwareInterface ,
-        NoteExtensionAwareInterface ,
         ActivityExtensionAwareInterface ,
         ExtendExtensionAwareInterface
     {
     
     /** @var AttachmentExtension */
     protected $attachmentExtension;
-    
-    /** @var NoteExtension */
-    protected $noteExtension;
     
     /** @var ActivityExtension */
     protected $activityExtension;
@@ -50,14 +39,6 @@ class AlliesExtendedMagentoBundleInstaller implements
     public function setAttachmentExtension(AttachmentExtension $attachmentExtension)
     {
         $this->attachmentExtension = $attachmentExtension;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setNoteExtension(NoteExtension $noteExtension)
-    {
-        $this->noteExtension = $noteExtension;
     }
     
     /**
@@ -81,7 +62,7 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function getMigrationVersion()
     {
-        return "v1_0_1";
+        return "v1_2";
     }
     
     /**
@@ -89,8 +70,14 @@ class AlliesExtendedMagentoBundleInstaller implements
      */
     public function up(Schema $schema, QueryBag $queries)
     {
-        ExtendMagentoOrderEntities_v1_0::addOrderEntityExtendFields($schema);
-        ExtendMagentoOrderItemEntities_v1_0::addOrderItemEntityExtendFields($schema);
-        AddIndexes_v1_0_1::addMagentoOrderIndexes($schema);
+        v1_0\ExtendMagentoOrderEntities::addOrderEntityExtendFields($schema);
+        v1_1_1\ExtendMagentoOrderEntities::addOrderEntityExtendFields($schema);
+        v1_0\ExtendMagentoOrderItemEntities::addOrderItemEntityExtendFields($schema);
+        v1_0_1\AddIndexes::addMagentoOrderIndexes($schema);
+        v1_1\ExtendMagentoCartEntities::addCartEntityExtendFields($schema);
+        v1_1\ExtendMagentoCartItemEntities::addCartItemEntityExtendFields($schema);
+        v1_2\ExtendMagentoCustomerAddressEntities::addCustomerAddressStreetFields($schema);
+        v1_2\ExtendMagentoCartAddressEntities::addCartAddressStreetFields($schema);
+        v1_2\ExtendMagentoOrderAddressEntities::addOrderAddressStreetFields($schema);
     }
 }

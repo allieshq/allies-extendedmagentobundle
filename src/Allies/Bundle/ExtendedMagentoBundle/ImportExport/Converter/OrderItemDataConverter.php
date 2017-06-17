@@ -2,7 +2,7 @@
 
 namespace Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter;
 
-use OroCRM\Bundle\MagentoBundle\ImportExport\Converter\OrderItemDataConverter as BaseOrderItemDataConverter;
+use Oro\Bundle\MagentoBundle\ImportExport\Converter\OrderItemDataConverter as BaseOrderItemDataConverter;
 
 class OrderItemDataConverter extends BaseOrderItemDataConverter
 {
@@ -21,5 +21,22 @@ class OrderItemDataConverter extends BaseOrderItemDataConverter
                     'surcharge_amount' => 'surchargeAmount',
                 ]
             );
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function convertToImportFormat(array $importedRecord, $skipNullValues = true)
+    {
+        $return = parent::convertToImportFormat($importedRecord, $skipNullValues);
+        
+        // Float or null
+        foreach (['priceInclTax','baseCost','rowTotalInclTax','hiddenTaxAmount','surchargeAmount'] as $k) {
+            if (array_key_exists($k, $return)) {
+                $return[$k] = ('' === $return[$k]) ? null : (float)$return[$k];
+            }
+        }
+        
+        return $return;
     }
 }
