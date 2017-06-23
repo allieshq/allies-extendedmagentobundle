@@ -50,8 +50,8 @@ class OrderDataConverter extends BaseOrderDataConverter
             }
         }
         
-        if (!empty($importedRecord['customerGender'])) {
-            $importedRecord['customerGender'] = $this->getOroGender($importedRecord['gender']);
+        if (!empty($return['customerGender'])) {
+            $return['customerGender'] = $this->getOroGender($return['customerGender']);
         }
         
         return $return;
