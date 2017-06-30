@@ -2,6 +2,7 @@
 
 namespace Allies\Bundle\ExtendedMagentoBundle\ImportExport\Converter;
 
+use Oro\Bundle\UserBundle\Model\Gender;
 use Oro\Bundle\MagentoBundle\ImportExport\Converter\CartDataConverter as BaseCartDataConverter;
 
 class CartDataConverter extends BaseCartDataConverter
