@@ -1,4 +1,5 @@
 AlliesExtendedMagentoBundle
 ===========================
 
-Extends the existing OroCRMMagentoBundle to support SCV (and other bundles)
+Extends OroCRMMagentoBundle, in conjunction with Allies_OroApi Magento extension, to add additional fields to Magento entities. 
+Primarily used by SCV.
