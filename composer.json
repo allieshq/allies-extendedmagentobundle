@@ -6,7 +6,7 @@
     "license":"MIT",
     "require": {
         "php": ">=5.6",
-        "oro/crm": ">=2.0"
+        "oro/crm": ">=2.0 <2.3"
     },
     "autoload": {
         "psr-0": { "Allies\\Bundle\\ExtendedMagentoBundle": "src/" }
